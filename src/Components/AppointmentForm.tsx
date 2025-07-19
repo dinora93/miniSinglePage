@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
-// Definir las props que espera el componente
 interface AppointmentFormProps {
   onAppointmentAdded: () => void;
 }
@@ -26,14 +25,14 @@ export const AppointmentForm = ({ onAppointmentAdded }: AppointmentFormProps) =>
         createdAt: new Date()
       });
 
-      // Limpiar el formulario
+     
       setPatientName('');
       setPatientTel('');
       setAppointmentDate('');
       setAppointmentTime('');
       setReason('');
 
-      // Notificar que se ha agregado una cita
+      
     onAppointmentAdded();
 
       alert('Cita registrada con éxito!');
